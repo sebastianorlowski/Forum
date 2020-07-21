@@ -15,8 +15,7 @@ public class TopicDao {
     }
 
     public List<Topic> getTopics() {
-        List<Topic> topics = this.em.createQuery("SELECT t from Topic t").getResultList();
-        return topics;
+        return (List<Topic>) this.em.createQuery("SELECT t from Topic t").getResultList();
     }
 
     public Topic getTopic(int id) {
@@ -32,8 +31,8 @@ public class TopicDao {
             et.commit();
             return true;
         } catch (Exception e) {
-            e.printStackTrace();
             et.rollback();
+            e.printStackTrace();
             return false;
         }
     }
