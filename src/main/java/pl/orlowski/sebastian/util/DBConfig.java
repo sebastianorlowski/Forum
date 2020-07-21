@@ -1,4 +1,4 @@
-package pl.orlowski.sebastian.utils;
+package pl.orlowski.sebastian.util;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

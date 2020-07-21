@@ -14,8 +14,9 @@ public class TopicDao {
         this.em = em;
     }
 
-    public List<Topic> getTopics() {
-        return (List<Topic>) this.em.createQuery("SELECT t from Topic t").getResultList();
+    public List<Topic> loadTopics() {
+        List<Topic> topics = this.em.createQuery("SELECT t from Topic t").getResultList();
+        return topics;
     }
 
     public Topic getTopic(int id) {
